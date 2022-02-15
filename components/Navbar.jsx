@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import requests from '../services/requests';
+import requests from '../utils/requests';
 
 export default function Navbar() {
   const router = useRouter();
@@ -10,7 +10,7 @@ export default function Navbar() {
         className="flex px-10 sm:px-20 text-2xl whitespace-nowrap space-x-10
         sm:space-x-20 overflow-x-scroll scrollbar-hide"
       >
-        {Object.entries(requests).map(([key, { title, url }]) => (
+        {Object.entries(requests).map(([key, { title }]) => (
           <h2
             key={key}
             onClick={() => router.push(`/?genre=${key}`)}
